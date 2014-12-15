@@ -8,7 +8,6 @@
 
 #import "AutoTextField.h"
 #import "UIView+move.h"
-#import "AppDelegate.h"
 #define KEY_WINDOW [UIApplication sharedApplication].keyWindow
 #define MAGIN_TO_KEYBOARD 20
 @implementation AutoTextField
