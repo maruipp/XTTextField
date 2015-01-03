@@ -50,9 +50,9 @@
 #pragma mark - 键盘消息
 - (void)registerNotifications
 {
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoradWillShow:) name:UIKeyboardWillShowNotification object:self];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoradWillHide:) name:UIKeyboardWillHideNotification object:self];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoradFrameWillChange:) name:UIKeyboardWillChangeFrameNotification object:self];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoradWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoradWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoradFrameWillChange:) name:UIKeyboardWillChangeFrameNotification object:nil];
 }
 - (void)removeNotifications
 {
