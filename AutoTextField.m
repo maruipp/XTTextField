@@ -1,14 +1,14 @@
 //
 //  AutoTextField.m
-//  paobuba
+//  
 //
 //  Created by 马 瑞鹏 on 14-6-22.
-//  Copyright (c) 2014年 爱叽歪工作室. All rights reserved.
+//  Copyright (c) 2014年 xuetangX. All rights reserved.
 //
 
 #import "AutoTextField.h"
 #import "UIView+move.h"
-#define KEY_WINDOW [UIApplication sharedApplication].keyWindow
+#define XT_KEY_WINDOW [UIApplication sharedApplication].keyWindow
 #define MAGIN_TO_KEYBOARD 20
 @implementation AutoTextField
 
@@ -50,9 +50,9 @@
 #pragma mark - 键盘消息
 - (void)registerNotifications
 {
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoradWillShow:) name:UIKeyboardWillShowNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoradWillHide:) name:UIKeyboardWillHideNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoradFrameWillChange:) name:UIKeyboardWillChangeFrameNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoradWillShow:) name:UIKeyboardWillShowNotification object:self];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoradWillHide:) name:UIKeyboardWillHideNotification object:self];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoradFrameWillChange:) name:UIKeyboardWillChangeFrameNotification object:self];
 }
 - (void)removeNotifications
 {
@@ -67,7 +67,7 @@
 //    keyboardRect = [_masterView convertRect:keyboardRect fromView:nil];
     CGFloat keyboardTop = keyboardRect.origin.y;
     
-    CGRect selfFrameInWindow = [self.superview convertRect:self.frame toView:KEY_WINDOW];
+    CGRect selfFrameInWindow = [self.superview convertRect:self.frame toView:XT_KEY_WINDOW];
     int offset = keyboardTop - (selfFrameInWindow.origin.y + selfFrameInWindow.size.height) - MAGIN_TO_KEYBOARD;
     if (offset < 0) {
         [_masterView verticalMove:offset animate:YES];

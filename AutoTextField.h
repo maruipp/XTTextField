@@ -1,9 +1,9 @@
 //
 //  AutoTextField.h
-//  paobuba
+//
 //
 //  Created by 马 瑞鹏 on 14-6-22.
-//  Copyright (c) 2014年 爱叽歪工作室. All rights reserved.
+//  Copyright (c) 2014年 xuetangX. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
